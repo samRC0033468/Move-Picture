@@ -18,23 +18,43 @@ namespace Move_Picture
         }
 
         private void btnRight_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
-        }
+		{
+			if (pictureBox1.Location.X < ClientRectangle.Width - pictureBox1.Width)
+			{
+				pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+			}
+		}
+       
 
         private void btnUp_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 5);
-        }
+		{
+			if (pictureBox1.Location.Y > 0)
+			{
+				pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 5);
+			}
+		}
+        
 
         private void btnDown_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 5);
-        }
+		{
+	         if(pictureBox1.Location.Y < ClientRectangle.Height - pictureBox1.Height)
+			{
+					pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 5);
+			}
+		}
 
         private void btnLeft_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
-        }
-    }
+		{
+			if (pictureBox1.Location.X > 0)
+			{
+				pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+			}
+		}
+        
+
+		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+	}
 }
